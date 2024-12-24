@@ -1,0 +1,7 @@
+Answer: DH{671ce26c70829e716fae26c7c71a33823feb479f2562891f64605bf68f60ae54}
+
+코드를 보면 입력받은 input을 shell 명령어로 실행하고 출력하는 코드다.
+1. ls
+2. cat hint.txt
+3. ls ./dream/hack/hello
+4. cat ./dream/hack/hello/* (flag.txt대신 *을 한 이유는 flag라는 단어가 input에 들어가면 안되기 때문)

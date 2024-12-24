@@ -1,0 +1,2 @@
+html 코드를 보면 value에 base64로 encoding된 값이 있다.
+decoding하면 python 프로그램이 나오고 실행하면 flag가 나온다.
