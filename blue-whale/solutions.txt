@@ -1,0 +1,82 @@
+https://dreamhack.io/wargame/challenges/853
+
+1. 처음에는 docker inspect 결과인 아래 json 형식을 보고 분석해보려 했으나 잘 모르겠어서 포기. => dive 안쓰니까 진짜 모르겠더라
+2. dive 라는 docker image 분석툴을 사용해서 분석
+3. docker image가 layer별로 실행될 때, 각 layer에서 flag가 보이는 순간을 찾아야함.
+4. touch `python3 -c "print(open('./flag', 'r').read())"` 를 살펴보면 flag값을 이름으로 가지는 파일을 생성
+5. 명령어가 실행됬을 때의 layer directory 구조를 보면 DH{~} 꼴의 파일이 생성되어 있는 것을 확인 가능
+
+[
+    {
+        "Id": "sha256:87a96c7a8db0a631faf4a5e0be8bd3d709919578eaea6f3a95816d2bc42d3715",
+        "RepoTags": [
+            "dreamhackofficial/blue-whale:1"
+        ],
+        "RepoDigests": [
+            "dreamhackofficial/blue-whale@sha256:6bcfd56d243ab37ede113aa8a6243eb3f274ae8971ff1eefc67796329c252fee"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2023-05-25T07:50:06.453635247Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "chall",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "31337/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "user=chall",
+                "chall_port=31337"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/home",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 151882917,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/fc31e902e8515a03d01a1be122c96dfd15b8dd6d5818c2e434301fdd51c756a8/diff:/var/lib/docker/overlay2/f48b92d053a1159c649de845afff7b1c7cbbb88f0155431f59e6066274a2e436/diff:/var/lib/docker/overlay2/4885396ebf69d002401c1fffd43794c6a6f579f0a8331c305d046d5ed904833f/diff:/var/lib/docker/overlay2/d1ed4c41f243738341e3f1fa526b8da7542682e4191a431cec410fe0564ae33d/diff:/var/lib/docker/overlay2/492f2a12037fe42854e00c5d15ef1b157fa44a730d8551ee1960bb9cce43db41/diff:/var/lib/docker/overlay2/0c553c955077ee948931e7acdba262f2af119999d21b2905fe9961c1fcc82489/diff:/var/lib/docker/overlay2/0df72c61d015e4c06d3eff3849b715aa176f4a937a3478dbf49a77257f70b011/diff:/var/lib/docker/overlay2/557f3b7e39155584fad7e2dd2399631d0e8f251731d15d5f09a2cc122e282bd8/diff:/var/lib/docker/overlay2/e7a50df613bf24d3cf79646a4cdf550f92e1ac3565990551979d1a9617832c31/diff",
+                "MergedDir": "/var/lib/docker/overlay2/ecd5cb0f6ed624acdd9c191f2f219817a8cb757ac56bf4d29a2d9407c007016b/merged",
+                "UpperDir": "/var/lib/docker/overlay2/ecd5cb0f6ed624acdd9c191f2f219817a8cb757ac56bf4d29a2d9407c007016b/diff",
+                "WorkDir": "/var/lib/docker/overlay2/ecd5cb0f6ed624acdd9c191f2f219817a8cb757ac56bf4d29a2d9407c007016b/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:6515074984c6f8bb1b8a9962c8fb5f310fc85e70b04c88442a3939c026dbfad3",
+                "sha256:34cc74a5e40511ff1596847d7da934c703dd93906f11df9c205c3143decedbee",
+                "sha256:ed43cbe2a365c3ac25a85d4919f4d07b1522055b663b6a49cdffa36304b2c33b",
+                "sha256:60dad543d375aaea270582227e1fa8a8b9f91a6c9f21bd2b9a4175b62b21754a",
+                "sha256:1ec8100a12f42403151c8f0dfef2ae5505d43f6a1364958b1ef498fa74efa088",
+                "sha256:3747ca90832a757949a3fcf1ecf2798024fbd1869155332803583ab61e04c689",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:2338e6ed1a632e22640fd2fcb9049738ad32eb4104ef43865a31107084791d88",
+                "sha256:89f8564b4d2f3ecb97b19051ece7fa44d9304f4bc787ac5acfd6cfbe420d663d",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]

@@ -1,0 +1,7 @@
+https://dreamhack.io/wargame/challenges/875/
+
+ssh chall@host3.dreamhack.games -p 12543
+pw: dhbgssh
+
+ssh로 서버 접속 후, flag를 확인하려면 접근이 제한됬다함.
+=> cat flag로 확인 가능

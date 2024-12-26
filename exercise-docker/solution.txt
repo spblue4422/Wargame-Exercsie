@@ -1,0 +1,6 @@
+https://dreamhack.io/wargame/challenges/876
+1. docker 설치
+2. docker build .
+3. docker run {image_ID}
+4. docker exec -it {container_ID} /bin/bash
+5. cat flag
