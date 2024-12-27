@@ -1,0 +1,14 @@
+https://dreamhack.io/wargame/challenges/873
+
+name: dnynyangang0310
+pw: 1111@444319!+1+13
+
+cat ../dream/*
+
+\d*\@\d{2,3}(31)+[^0-8\"]\!
+=> {숫자 0번 이상 반복}@{숫자 2번 이상 3번 이하 반복}{31 한번 이상 반복}{0~8, " 제외하고 아무거나}!
+
+1. step2.php를 읽어보면 ID와 PW가 특정 패턴에 매치되면 다른 값으로 바뀐다는 것을 알 수 있음. (preg_replace(match_pattern, replacement, target))
+2. ID는 'nyang'이 ''으로 치환되는데, 프로그램에서 요구하는 통과값은 'dnyang0310'이기 때문에, 'dnyang' 사이에 'nyang'를 임의로 더 끼워넣음.
+3. PW는 요구하는 regex 패턴대로 '1111@444319!'을 넣으면 'd4y0r50ng'로 치환되기 때문에, 뒤에 '+1+13'만 붙여줌.
+4. step1을 넘기고 step2는 cmd 명령어를 실행해주는데 'flag'가 들어가면 필터링되므로, 'flag'없이 flag 값을 출력할 수 있는 'cat ../dream/*'를 입력

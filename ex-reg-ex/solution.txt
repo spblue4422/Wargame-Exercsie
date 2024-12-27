@@ -1,0 +1,5 @@
+https://dreamhack.io/wargame/challenges/834
+
+r'dr\w{5,7}e\d+am@[a-z]{3,7}\.\w+'
+=> dr{아무 단어 5번이상 7번이하 반복}e{숫자 1번 이상 반복}am@{a~z 3번이상 7번이하 반복}.{단어 한번 이상 반복}
+=> dr11111e2am@aaa.com
